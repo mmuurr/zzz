@@ -1,0 +1,11 @@
+Package: zzz
+Title: A Small Collection of Handy Utilities
+Version: 1.0.0
+Description: A small collection of handy utilites that are missing in base R.
+Authors@R: person("Murat", "Tasan", email = "mmuurr@gmail.com", role = c("aut", "cre"))
+URL: https://github.com/mmuurr/zzz-R-Package
+BugReports: https://github.com/mmuurr/zzz-R-Package/issues
+Depends: R (>= 3.3.3)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
