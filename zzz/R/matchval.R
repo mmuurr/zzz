@@ -11,7 +11,7 @@ matchval <- function(query, from, to, nomatch = NA, .warn_nomatch = FALSE) {
     #     return(query)
     # }
 
-    match_iix <- match(x, from, nomatch = NA)
+    match_iix <- match(query, from, nomatch = NA)
     if(.warn_nomatch) warning("missing matches detected", immediate. = TRUE)
     NA2(to[match_iix], nomatch)
 } 
