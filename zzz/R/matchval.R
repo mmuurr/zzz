@@ -15,7 +15,8 @@
 #'          If an entry in \code{query} cannot be found in \code{from}, the corresponding returned value is \code{nomatch}.
 #'          Take note that if \code{to} contains any \code{nomatch} values, presence of \code{nomatch} in the returnd value doesn't indicate that some \code{query} was missing in \code{from}, but one can use the \code{.warn_nomatch} case to disambiguate between these two cases.
 #'
-#' @section What if \code{query} is a factor?
+#' @section Factors:
+#'          What if \code{query} is a factor?
 #'          To achieve factor recoding, use \code{forcats::fct_recode} instead.
 #'
 #' @section TODO:

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • zzz</title>
+<title>Object structure string. — sstr • zzz</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -78,82 +78,59 @@
       </header>
 
       <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;1.0.1</small>
-      </h1>
+    <h1>Object structure string.</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    
+    <p>Provide internal _str_ucture of an R object as a returned string.</p>
+    
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <pre class="usage"><span class='fu'>sstr</span>(<span class='no'>obj</span>, <span class='no'>...</span>, <span class='kw'>.name</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>.newline</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>obj</th>
+      <td><p>Any R object.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Arguments passed on to <code><a href='http://www.rdocumentation.org/packages/utils/topics/str'>str</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>.name</th>
+      <td><p>Provide obj's variable name (as passed when <code>sstr</code> was called)?
+(Adds an additional line to the output.)</p></td>
+    </tr>
+    <tr>
+      <th>.newline</th>
+      <td><p>Trail the returned string with a newline character?</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="chunk.html">chunk</a></code> <code><a href="chunk.html">chunk_int</a></code> </p>
-          </td>
-          <td><p>Chunk a vector into a list of vectors of roughly equal length.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="logit.html">logit</a></code> </p>
-          </td>
-          <td><p>Logistic function.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="matchval.html">matchval</a></code> </p>
-          </td>
-          <td><p>Maps values between vectors.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="NA_.html">NA_logical_</a></code> <code><a href="NA_.html">NA_double_</a></code> </p>
-          </td>
-          <td><p>Missing NA values.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="notin.html">%notin%</a></code> <code><a href="notin.html">%nin%</a></code> <code><a href="notin.html">%ni%</a></code> </p>
-          </td>
-          <td><p>Not-In</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="Special-Value-Replacement.html">NA2</a></code> <code><a href="Special-Value-Replacement.html">Inf2</a></code> <code><a href="Special-Value-Replacement.html">NaN2</a></code> </p>
-          </td>
-          <td><p>NA, Inf, and NaN replacement.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="sstr.html">sstr</a></code> </p>
-          </td>
-          <td><p>Object structure string.</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+    <p>A string capturing the results of <code>str(obj, ...)</code>.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='http://www.rdocumentation.org/packages/utils/topics/str'>str</a></code>.</p>
+    
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
+          </ul>
+
   </div>
 </div>
 
