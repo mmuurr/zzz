@@ -1,9 +1,21 @@
 sstr <- function(obj, ..., .name = FALSE, .newline = FALSE) {
-    obj_name <- deparse(substitute(obj))
     str_output <- paste0(capture.output(str(obj, ...)), collapse = "\n")
-    sprintf("%s%s%s",
-            if(.name) sprintf("str(%s):\n", obj_name) else "",
-            str_output,
-            if(.newline) "\n" else "")
-}
 
+    header <-
+        if(identical(.name, TRUE)) {
+            sprintf("str(%s):\n", deparse(substitute(obj)))
+        } else if(is.character(.name) && length(.name) == 1) {
+            sprintf("str(%s):\n", .name)
+        } else {
+            ""
+        }
+
+    footer <-
+        if(identical(.newline, TRUE)) {
+            "\n"
+        } else {
+            ""
+        }
+
+    sprintf("%s%s%s", header, str_output, footer)
+}
