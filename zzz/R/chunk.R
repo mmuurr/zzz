@@ -1,4 +1,16 @@
-## Similar to what can be achieved with split, seq_along, and %%, but more flexible in the chunking methods.
+#' @title Chunk a vector into a list of vectors of roughly equal length.
+#'
+#' @param x The vector or list to be chunked.
+#' @param n The number of integers to chunk (i.e. chunk the sequence \code{1:n}).
+#' @param n_chunks The number of chunks desired.
+#' @param max_chunk_size The maximum desired length of any chunk.
+#' @param method The algorithm to use for chunking.
+#'        \code{"seq"} _seq_uentially chunks \code{x}.
+#'        \code{"mod"} creates chunks where original indices are alike after modulo arithmetic.
+#'        \code{"rand"} specifies that \code{x} should be uniformly and randomly distributed across chunks.
+#' @return For \code{chunk}, a list with \code{x} chunked across the list entries.
+#'         For \code{chunk_int}, a list with the values \code{1:n} chunked across the list entries.
+#' @details Exactly one of \code{n_chunks} and \code{max_chunk_size} should be \code{NULL} (to specify both as non-\code{NULL} is an error).
 chunk <- function(x, n_chunks = NULL, max_chunk_size = NULL, method = c("seq", "mod", "rand")) {
     if((is.null(n_chunks) && is.null(max_chunk_size)) ||
        (!is.null(n_chunks) && !is.null(max_chunk_size))) {
@@ -21,6 +33,7 @@ chunk <- function(x, n_chunks = NULL, max_chunk_size = NULL, method = c("seq", "
     split(x, split_iix)
 }
 
+#' @rdname chunk
 chunk_int <- function(n, n_chunks = NULL, max_chunk_size = NULL, method = c("seq", "mod", "rand")) {
     chunk(seq_len(x), n_chunks, max_chunk_size, method)
 }
