@@ -35,5 +35,5 @@ chunk <- function(x, n_chunks = NULL, max_chunk_size = NULL, method = c("seq", "
 
 #' @rdname chunk
 chunk_int <- function(n, n_chunks = NULL, max_chunk_size = NULL, method = c("seq", "mod", "rand")) {
-    chunk(seq_len(x), n_chunks, max_chunk_size, method)
+    chunk(seq_len(n), n_chunks, max_chunk_size, method)
 }
