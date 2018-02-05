@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Authors • zzz</title>
+<title>Format a time or date to an ISO8601 string. — iso8601 • zzz</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -20,9 +20,9 @@
 
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="jquery.sticky-kit.min.js"></script>
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../jquery.sticky-kit.min.js"></script>
+<script src="../pkgdown.js"></script>
   
   
 <!-- mathjax -->
@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <div class="container template-authors">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -47,18 +47,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">zzz</a>
+      <a class="navbar-brand" href="../index.html">zzz</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       
@@ -78,22 +78,52 @@
       </header>
 
       <div class="row">
-  <div class="contents col-md-12">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Authors</h1>
+    <h1>Format a time or date to an ISO8601 string.</h1>
     </div>
 
-    <ul class="list-unstyled">
-      <li>
-        <p><strong>Murat Tasan</strong>. Author, maintainer.
-        </p>
-      </li>
-    </ul>
+
+
+    <pre class="usage"><span class='fu'>iso8601</span>(<span class='no'>x</span>, <span class='kw'>what</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"datetime"</span>, <span class='st'>"timestamp"</span>, <span class='st'>"date"</span>, <span class='st'>"time"</span>), <span class='kw'>tz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>tz_offset</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>a Date or POSIXt time vector.</p></td>
+    </tr>
+    <tr>
+      <th>what</th>
+      <td><p>[string] What type of output?
+"datetime" and "timestamp" are equivalent, "date" is just the date, and "time" is just the time (i.e. without date).</p></td>
+    </tr>
+    <tr>
+      <th>tz</th>
+      <td><p>[Olson timezone string] The desired timezone for the output string.</p></td>
+    </tr>
+    <tr>
+      <th>tz_offset</th>
+      <td><p>[boolean] Should the timezone offset be included in the output?</p></td>
+    </tr>
+    <tr>
+      <th>digits</th>
+      <td><p>[integer] Subsecond digits desired in the output string, as specified by the "<!-- %OSn" format string in `base::strftime()`, where n is the number of digits.} --></p></td>
+    </tr>
+    </table>
+    
 
   </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+                </ul>
 
+  </div>
 </div>
-
 
       <footer>
       <div class="copyright">
