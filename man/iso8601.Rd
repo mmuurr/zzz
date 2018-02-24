@@ -4,7 +4,7 @@
 \alias{iso8601}
 \title{Format a time or date to an ISO8601 string.}
 \usage{
-iso8601(x, what = c("datetime", "timestamp", "date", "time"), tz = NULL,
+iso8601(x, what = c("datetime", "timestamp", "date", "time"), tz = "",
   tz_offset = TRUE, digits = 0)
 }
 \arguments{
@@ -13,12 +13,14 @@ iso8601(x, what = c("datetime", "timestamp", "date", "time"), tz = NULL,
 \item{what}{[string] What type of output?
 "datetime" and "timestamp" are equivalent, "date" is just the date, and "time" is just the time (i.e. without date).}
 
-\item{tz}{[Olson timezone string] The desired timezone for the output string.}
+\item{tz}{[Olson timezone string] The desired timezone for output string presentation; same as in \code{base:strftime()}.
+The default (empty string) uses R's current session-set timezone.
+(\code{NULL} is treated identically to the empty string.)}
 
 \item{tz_offset}{[boolean] Should the timezone offset be included in the output?}
 
-\item{digits}{[integer] Subsecond digits desired in the output string, as specified by the "%OSn" format string in `base::strftime()`, where n is the number of digits.}
+\item{digits}{[integer] Subsecond digits desired in the output string, as specified by the "\%OSn" format string in \code{base::strftime()}, where n is the number of digits.}
 }
 \value{
-An ISO8601-formatted character vector.
+An ISO8601 character vector.
 }

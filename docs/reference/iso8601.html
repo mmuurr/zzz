@@ -18,6 +18,8 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -25,6 +27,8 @@
 <script src="../pkgdown.js"></script>
   
   
+<meta property="og:title" content="Format a time or date to an ISO8601 string. — iso8601" />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -85,7 +89,7 @@
 
 
 
-    <pre class="usage"><span class='fu'>iso8601</span>(<span class='no'>x</span>, <span class='kw'>what</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"datetime"</span>, <span class='st'>"timestamp"</span>, <span class='st'>"date"</span>, <span class='st'>"time"</span>), <span class='kw'>tz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+    <pre class="usage"><span class='fu'>iso8601</span>(<span class='no'>x</span>, <span class='kw'>what</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"datetime"</span>, <span class='st'>"timestamp"</span>, <span class='st'>"date"</span>, <span class='st'>"time"</span>), <span class='kw'>tz</span> <span class='kw'>=</span> <span class='st'>""</span>,
   <span class='kw'>tz_offset</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
@@ -102,7 +106,9 @@
     </tr>
     <tr>
       <th>tz</th>
-      <td><p>[Olson timezone string] The desired timezone for the output string.</p></td>
+      <td><p>[Olson timezone string] The desired timezone for output string presentation; same as in <code>base:strftime()</code>.
+The default (empty string) uses R's current session-set timezone.
+(<code>NULL</code> is treated identically to the empty string.)</p></td>
     </tr>
     <tr>
       <th>tz_offset</th>
@@ -110,9 +116,13 @@
     </tr>
     <tr>
       <th>digits</th>
-      <td><p>[integer] Subsecond digits desired in the output string, as specified by the "<!-- %OSn" format string in `base::strftime()`, where n is the number of digits.} --></p></td>
+      <td><p>[integer] Subsecond digits desired in the output string, as specified by the "%OSn" format string in <code><a href='http://www.rdocumentation.org/packages/base/topics/strptime'>base::strftime()</a></code>, where n is the number of digits.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>An ISO8601 character vector.</p>
     
 
   </div>
@@ -120,7 +130,9 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

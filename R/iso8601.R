@@ -2,12 +2,12 @@
 #' @param x a Date or POSIXt time vector.
 #' @param what [string] What type of output?
 #' "datetime" and "timestamp" are equivalent, "date" is just the date, and "time" is just the time (i.e. without date).
-#' @param tz [Olson timezone string] The desired timezone for output string presentation; same as in `base:strftime()`.
+#' @param tz [Olson timezone string] The desired timezone for output string presentation; same as in \code{base:strftime()}.
 #'        The default (empty string) uses R's current session-set timezone.
-#'        (`NULL` is treated identically to the empty string.)
+#'        (\code{NULL} is treated identically to the empty string.)
 #' @param tz_offset [boolean] Should the timezone offset be included in the output?
-#' @param digits [integer] Subsecond digits desired in the output string, as specified by the "%OSn" format string in `base::strftime()`, where n is the number of digits.
-#' @return An ISO8601-formatted character vector.
+#' @param digits [integer] Subsecond digits desired in the output string, as specified by the "\%OSn" format string in \code{base::strftime()}, where n is the number of digits.
+#' @return An ISO8601 character vector.
 iso8601 <- function(x, what = c("datetime", "timestamp", "date", "time"), tz = "", tz_offset = TRUE, digits = 0) {
     ## process `what`; datetime == timestamp
     what <- match.arg(what)
