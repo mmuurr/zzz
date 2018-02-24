@@ -13,6 +13,7 @@ iso8601 <- function(x, what = c("datetime", "timestamp", "date", "time"), tz = N
     if(!is.null(tz) && is.na(match(tz, OlsonNames()))) {
         stop(sprintf("unrecognized tz = %s", tz))
     }
+    if(is.null(tz)) tz <- ""
     
     digits <- as.integer(digits)
 
